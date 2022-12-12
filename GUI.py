@@ -1,12 +1,28 @@
-from PySide6.QtWidgets import QWidget, QApplication, QPushButton
+from PySide6.QtWidgets import QWidget, QApplication, QPushButton, QMainWindow
 from PySide6.QtGui import QIcon, QFont
 import sys
 
 
+# Subclass QMainWindow to customize your application's main window
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        #self.setWindowTitle("My App")
+
+        button = QPushButton("Press Me!")
+
+        # Set the central widget of the Window.
+        self.setCentralWidget(button)
+
 app = QApplication()
+
+window = MainWindow()
+
+#app = QApplication()
 appIcon = QIcon("downloads.png")
 
-window = QWidget()
+#window = QWidget()
 
 window.setWindowTitle("Frist GUI")
 window.setWindowIcon(appIcon)
